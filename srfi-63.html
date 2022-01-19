@@ -1,23 +1,20 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<HTML>
+<HTML lang="en">
   <HEAD>
     <title>SRFI 63: Homogeneous and Heterogeneous Arrays</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/srfi.css" type="text/css" />
+    <link rel="stylesheet" href="https://srfi.schemers.org/srfi.css" type="text/css" />
+    <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
   </HEAD>
 
   <BODY>
 
-<H1>Title</H1>
+<h1><a href="https://srfi.schemers.org/"><img class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" alt="SRFI surfboard logo" /></a>63: Homogeneous and Heterogeneous Arrays</h1>
 
-Homogeneous and Heterogeneous Arrays
+<p>by Aubrey Jaffer</p>
 
-<H1>Author</H1>
-
-Aubrey Jaffer
-
-<H1>Status</H1>
+<h2>Status</h2>
 
 <p>This SRFI is currently in <em>final</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+63+at+srfi+dotschemers+dot+org">srfi-63@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-63">archive</a>.</p>
 <UL>
@@ -30,7 +27,7 @@ Aubrey Jaffer
   <LI>Final: 2005-04-27</LI>
 </UL>
 
-<H1>Abstract</H1>
+<h2>Abstract</h2>
 
 The SRFI, which is to supersede
 <A HREF="https://srfi.schemers.org/srfi-47/srfi-47.html">SRFI-47</A>,
@@ -62,7 +59,7 @@ SRFI-58 gives a read/write invariant syntax for the homogeneous and
 heterogeneous arrays described here.
 </P><P>
 
-</P><H1>Issues</H1>
+</P><h2>Issues</h2>
 
 <UL>
 <!-- <LI> -->
@@ -81,9 +78,9 @@ behavior of decimal flonums than to make it wrong.
 <!-- <P> -->
 </P></LI></UL>
 
-<H1>Rationale</H1>
+<h2>Rationale</h2>
 
-<H2>Arrays</H2>
+<h3>Arrays</h3>
 
 Computations have been organized into multidimensional arrays for over
 200 years.  Applications for multi-dimensional arrays continue to
@@ -91,7 +88,7 @@ arise.  Computer graphics and imaging, whether vector or raster based,
 use arrays.  A general-purpose computer language without
 multidimensional arrays is an oxymoron.
 
-<H2>Precision</H2>
+<h3>Precision</h3>
 
 R5RS provides an input syntax for inexact numbers which is capable of
 distinguishing between <VAR>short</VAR>, <VAR>single</VAR>,
@@ -124,7 +121,7 @@ for scalar calculations.  The extra computation incurred by gratuitous
 precision is usually small compared with the overhead of type-dispatch
 and boxed data manipulation.
 <P>
-</P><H2>Homogeneous Arrays</H2>
+</P><h3>Homogeneous Arrays</h3>
 
 But if calculations are vectorized, that overhead can become
 significant.  Sophisticated program analysis may be able to deduce
@@ -151,7 +148,7 @@ can reduce by factors of 2 or 4 the storage they occupy; which can
 also speed execution because of the lower bandwidth to the memory
 necessary to supply the CPU data cache.
 </P><P>
-</P><H2>Common Lisp</H2>
+</P><h3>Common Lisp</h3>
 
 Common-Lisp arrays are serviceable, and are the basis for arrays here.
 Common-Lisp's <CODE>make-array</CODE> does not translate well to
@@ -171,7 +168,7 @@ both interpreted and compiled Scheme implementations.  By avoiding the
 morass of general type specification, SRFI-63 can be more easily
 accommodated by more Scheme implementations.
 </P><P>
-</P><H2>Argument Order</H2>
+</P><h3>Argument Order</h3>
 
 <UL>
 <LI>
@@ -216,7 +213,7 @@ The list-&gt;array is somewhat dissonant:
 </P></LI></UL>
 <P>
 
-</P><H2>Homogeneous Array Types</H2>
+</P><h3>Homogeneous Array Types</h3>
 
 All implementations must support Scheme strings as rank 1 character
 arrays.  This requirement mandates that Scheme strings be valid
@@ -265,7 +262,7 @@ Decimal flonums are used for financial calculations so that fractional
 errors do not accumulate.  They should be exact numbers.
 </P><P>
 <A NAME="Conversions"></A>
-</P><H2>Conversions</H2>
+</P><h3>Conversions</h3>
 
 <UL>
 <LI> All the elements of arrays of type A:fixN8b, A:fixN16b,
@@ -309,7 +306,7 @@ errors do not accumulate.  They should be exact numbers.
 </P></LI></UL>
 
 <A NAME="Prototype Procedures"></A>
-<H2>Prototype Procedures</H2>
+<h3>Prototype Procedures</h3>
 
 Implementations are required to define all of the prototype
 procedures.  Uniform types of matching format and sizes which the
@@ -395,7 +392,7 @@ employing them, with less capable platforms using vectors; but all
 working compatibly from the same source code.
 </P><P>
 
-</P><H2>Shared Arrays</H2>
+</P><h3>Shared Arrays</h3>
 
 To my knowledge, the specification of shared array index mapping by
 means of a procedure is original to Alan Bawden in his "array.scm".
@@ -414,7 +411,7 @@ allowing only index displacements (not reversals, skips, or
 shuffling).
 </P><P>
 
-</P><H2>Limit Cases</H2>
+</P><h3>Limit Cases</h3>
 
 The bounds for each index in both Alan Bawden's "array.scm" and
 <A HREF="https://srfi.schemers.org/srfi-25/srfi-25.html">SRFI-25</A>
@@ -437,7 +434,7 @@ O(<I>R</I>)+<I>S</I>, where <I>R</I> is the rank of the array and
 <I>S</I> is the string access time.
 </P><P>
 
-</P><H1>Specification</H1>
+</P><h2>Specification</h2>
 
 
 <P>
@@ -986,7 +983,7 @@ Returns a boolean uniform-array prototype.
 
 
 
-<H1>Implementation</H1>
+<h2>Implementation</h2>
 
 <A HREF="http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/slib/slib/array.scm?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">slib/array.scm</A>
 implements array procedures for R4RS or R5RS compliant Scheme
@@ -1480,7 +1477,7 @@ arrays.
 (define A:bool (make-prototype-checker 'A:bool boolean? vector))
 </PRE>
 
-<H1>Copyright</H1>
+<h2>Copyright</h2>
 <p>Copyright (C) 2005 Aubrey Jaffer</p>
 
 <P>
