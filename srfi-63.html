@@ -25,6 +25,10 @@
   <li>Revised: <a href="https://srfi.schemers.org/srfi-63/srfi-63-1.6.html">2005-04-08</a></li>
   <li>Revised: <a href="https://srfi.schemers.org/srfi-63/srfi-63-1.7.html">2005-04-27</a></li>
   <li>Final: 2005-04-27</li>
+  <li>Revised to fix errata:
+    <ul>
+      <li>2022-10-22 (Fix incorrect names of decimal flonum rational
+	procedures, e.g. <a href="#IDX1138"><code>floq128d</code></a>.)</li></ul></li>
 </ul>
 
 <h2>Abstract</h2>
@@ -878,11 +882,11 @@ Returns an inexact 16.bit flonum real uniform-array prototype.
 
 
 <dl>
-<dt><u>Function:</u> <b>a:flor128b</b> <i>z</i>
+<dt><u>Function:</u> <b>a:floq128d</b> <i>z</i>
 </dt>
 <dd id="IDX1138">
 </dd>
-<dt><u>Function:</u> <b>a:flor128b</b>
+<dt><u>Function:</u> <b>a:floq128d</b>
 </dt>
 <dd id="IDX1139">
 <p>
@@ -893,11 +897,11 @@ Returns an exact 128.bit decimal flonum rational uniform-array prototype.
 
 
 <dl>
-<dt><u>Function:</u> <b>a:flor64b</b> <i>z</i>
+<dt><u>Function:</u> <b>a:floq64d</b> <i>z</i>
 </dt>
 <dd id="IDX1140">
 </dd>
-<dt><u>Function:</u> <b>a:flor64b</b>
+<dt><u>Function:</u> <b>a:floq64d</b>
 </dt>
 <dd id="IDX1141">
 <p>
@@ -907,11 +911,11 @@ Returns an exact 64.bit decimal flonum rational uniform-array prototype.
 </dl>
 
 <dl>
-<dt><u>Function:</u> <b>a:flor32b</b> <i>z</i>
+<dt><u>Function:</u> <b>a:floq32d</b> <i>z</i>
 </dt>
 <dd id="IDX1142">
 </dd>
-<dt><u>Function:</u> <b>a:flor32b</b>
+<dt><u>Function:</u> <b>a:floq32d</b>
 </dt>
 <dd id="IDX1143">
 <p>
@@ -1502,15 +1506,15 @@ arrays.
 ;;@args z
 ;;@args
 ;;Returns an exact 128.bit decimal flonum rational uniform-array prototype.
-(define A:floR128b (make-prototype-checker 'A:floR128b real? vector))
+(define A:floQ128d (make-prototype-checker 'A:floQ128d real? vector))
 ;;@args z
 ;;@args
 ;;Returns an exact 64.bit decimal flonum rational uniform-array prototype.
-(define A:floR64b (make-prototype-checker 'A:floR64b real? vector))
+(define A:floQ64d (make-prototype-checker 'A:floQ64d real? vector))
 ;;@args z
 ;;@args
 ;;Returns an exact 32.bit decimal flonum rational uniform-array prototype.
-(define A:floR32b (make-prototype-checker 'A:floR32b real? vector))
+(define A:floQ32d (make-prototype-checker 'A:floQ32d real? vector))
 
 ;;@args n
 ;;@args
